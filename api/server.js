@@ -14,6 +14,6 @@ server.get("/", (req, res) => {
   res.json({ api: "up and running" });
 });
 
-server.use("/rsvp", rsvpRouter);
+server.use("/rsvps", rsvpRouter);
 
 module.exports = server;

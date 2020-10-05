@@ -1,4 +1,4 @@
-const db = require('database')
+const db = require('../database/dbConfig')
 
 module.exports = {
     get,
@@ -10,7 +10,7 @@ function get() {
     return db('rsvps')
 }
 
-function getById() {
+function getById(id) {
     return db('rsvps').where({id: id}).first()
 }
 

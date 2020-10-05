@@ -14,7 +14,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Rsvps.getById()
+  const id = req.params.id
+  Rsvps.getById(id)
     .then((rsvp) => {
       if (!rsvp) {
         res.status(404).json({ message: "rsvp not found" });
@@ -28,7 +29,8 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  Rsvps.add()
+  const rsvp = req.body
+  Rsvps.add(rsvp)
     .then((rsvp) => {
       res.status(201).json({ data: rsvp });
     })
