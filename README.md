@@ -1,10 +1,10 @@
 # backend-barcelona
 
 ## Get Request
-- url.com/rsvps
+- https://barcelona22.herokuapp.com/rsvps
 
 ## Get By Id
-- url.com/rsvps/:id
+- https://barcelona22.herokuapp.com/rsvps/:id
 
 ## Post
-- url.com/rsvps
+- https://barcelona22.herokuapp.com/rsvps
