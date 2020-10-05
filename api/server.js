@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
-const rsvpRouter = require("rsvpRouter");
+const rsvpRouter = require("../rsvps/rsvp-router");
 
 const server = express();
 
