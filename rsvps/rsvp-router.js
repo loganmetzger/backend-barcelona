@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  const id = req.params.id
+  const id = req.params.id;
   Rsvps.getById(id)
     .then((rsvp) => {
       if (!rsvp) {
@@ -29,14 +29,18 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const rsvp = req.body
+  const rsvp = req.body;
   Rsvps.add(rsvp)
     .then((rsvp) => {
-      res.status(201).json({ data: rsvp });
+      if (!rsvp) {
+        res.status(400).json({ message: "no post" });
+      } else {
+        res.status(201).json({ data: rsvp });
+      }
     })
     .catch((err) => {
       res.status(500).json({ message: err });
     });
 });
 
-module.exports = router
+module.exports = router;
